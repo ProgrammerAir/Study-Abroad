@@ -1,0 +1,33 @@
+// bu yerda proyectdagi barcha qaytalanadigan codelar yozib boriladi.
+@use "../abstract/functions";
+@use "../abstract/mixins";
+@use "../abstract/variables";
+@use "sass:map";
+
+.btn {
+    background-color: #717CFF;
+    border-radius: 10px;
+    border: none;
+
+    a {
+        display: block;
+        padding: 12px 33px;
+
+        span {
+            margin: {
+                right: 29px;
+            }
+            font-family: map.get(variables.$font-familes, "Roboto");
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 40px;
+            text-align: left;
+            color: #fff;
+        }
+
+        i {
+            font-size: 20px;
+            color: #37474F;
+        }
+    }
+}

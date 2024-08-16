@@ -1,0 +1,5 @@
+// bu yerda proyectdagi barcha functionlar yozib boriladi.
+@function rem($number, $default) {
+    $rem: calc($number / $default) * 1rem;
+    @return $rem; 
+}  

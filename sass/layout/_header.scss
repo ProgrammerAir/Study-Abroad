@@ -1,0 +1,92 @@
+@use "../abstract/functions";
+@use "../abstract/variables";
+@use "../abstract/mixins";
+@use 'sass:map';
+
+.header {
+    @include mixins.flexbox;
+    justify-content: space-between;
+
+    padding: {
+        left: 149px;
+        top: 41px;
+        right: 108px;
+    }
+
+    &__second-part {
+        @include mixins.flexbox;
+        gap: 72px;
+        height: 42px;
+
+        nav {
+            height: 100%;
+
+            ul {
+                margin: 0;
+                height: 100%;
+            
+                @include mixins.flexbox;
+                gap: 73px;
+
+                li {
+                    position: relative;
+                    @include mixins.flexbox;
+                    flex-direction: column;
+                    height: 100%;
+                    list-style: none;
+                    
+                    a {
+                        display: block;
+
+                        margin: {
+                            top: 6px;
+                        }
+
+                        height: 100%;
+                        font-family: map.get(variables.$font-familes, "Roboto");
+                        font-size: 17px;
+                        font-weight: 500;
+                        line-height: 19.92px;
+                        text-align: left;
+                        color: #373737;
+                    
+                    }
+
+                    .active {
+                        visibility: hidden;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 60%;
+                        height: 3px;
+                        border-radius: 2px;
+                        transition: all .1 s ease;
+                        background-color: #717CFF;
+                    }
+                }
+
+                li:hover .active {
+                    visibility: visible;
+                }
+
+                li:first-child .active {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        border: none;
+        background: transparent;
+        border-radius: 5px;
+        border: 2px solid #717CFF;
+
+        a {
+            display: block;
+            text-align: center;
+            line-height: 100%;
+            padding: 10px  27px;
+        }
+    }
+}

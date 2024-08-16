@@ -1,0 +1,71 @@
+@use "../abstract/functions";
+@use "../abstract/mixins";
+@use "../abstract/variables";
+@use "sass:map";
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    padding: {
+        top: 128px;
+        left: 148px;
+    }
+
+    &__left-page { 
+        @include mixins.flexbox;
+        align-items: start;
+        flex-direction: column;
+        gap: 101px;
+    }
+
+    &__info {
+
+        h1 {
+            width: 530px;
+            margin: 0;
+            font-family: map.get(variables.$font-familes, "Roboto");
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 65.63px;
+            text-align: left;
+
+            span {
+                color: #717CFF;
+            }
+        }
+
+        p {
+            width: 610px ;
+            margin: {
+                top: 15px;
+                bottom: 42px;
+            }
+            font-family: map.get(variables.$font-familes, "Roboto");
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 38px;
+            text-align: left;
+
+        }
+    }
+
+    &__icons {
+        @include mixins.flexbox;
+        gap: 23px;
+    }
+
+    &__images {
+        position: relative;
+        width: 593px;
+        overflow: hidden;
+    }
+    
+    &__last-img {
+        position: absolute;
+        right: 0; bottom: -160px;
+        z-index: -1;
+    }
+}
