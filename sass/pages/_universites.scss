@@ -1,0 +1,30 @@
+@use "../abstract/functions";
+@use "../abstract/mixins";
+@use "../abstract/variables";
+@use "sass:map";
+
+.universites {
+    padding: {
+        top: 55px;
+        left: 128px;
+        right: 116px;
+        bottom: 57px;
+    }
+    background-color: #fafafa;
+
+    h2 {
+        margin-bottom: 86px;
+        font-family: map.get(variables.$font-familes, "Roboto");
+        font-size: 23px;
+        font-weight: 500;
+        line-height: 26.95px;
+        letter-spacing: 2.0999999046325684px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #373737;
+    }
+
+    img {
+        margin-bottom: 104px;
+    }
+}

@@ -1,0 +1,27 @@
+@use "../abstract/functions";
+@use "../abstract/mixins";
+@use "../abstract/variables";
+@use "sass:map";
+
+.carusel {
+    width: max-content;
+    margin: 0 auto;
+    @include mixins.flexbox;
+    gap: 21px;
+
+    div:first-child {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: #717CFF;
+        opacity: 1;
+    }
+
+    div {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #7C7C7C51;
+        opacity: .31;
+    }
+}
